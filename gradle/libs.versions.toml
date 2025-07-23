@@ -19,6 +19,8 @@ hilt = "2.49"
 hiltCompose = "1.2.0"
 retrofit = "2.9.0"
 converterGson = "2.9.0"
+coil = "2.4.0"
+compose-foundation = "1.5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,6 +47,8 @@ materialIconsExtended = { group = "androidx.compose.material", name = "material-
 materialIconsCore = { group = "androidx.compose.material", name = "material-icons-core", version.ref = "compose" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose-foundation" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -78,6 +78,8 @@ dependencies {
     implementation(libs.navigation.compose)
     implementation(libs.materialIconsExtended)
     implementation(libs.materialIconsCore)
+    implementation(libs.coil.compose)
+    implementation(libs.compose.foundation)
 
     //hilt
     implementation(libs.hilt.core)

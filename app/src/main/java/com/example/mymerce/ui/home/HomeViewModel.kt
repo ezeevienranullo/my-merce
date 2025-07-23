@@ -28,6 +28,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 _products.value = repository.getProducts()
+                Log.d("HomeViewModel", "Results: ${_products.value}")
             } catch (e: Exception) {
                 Log.e("HomeViewModel", "Error: ${e.localizedMessage}")
             } finally {
