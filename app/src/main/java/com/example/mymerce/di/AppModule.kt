@@ -3,8 +3,10 @@ package com.example.mymerce.di
 import com.example.mymerce.data.remote.ApiCall
 import com.example.mymerce.data.repository.GreetingRepositoryImpl
 import com.example.mymerce.data.repository.ProductRepositoryImpl
+import com.example.mymerce.data.repository.RecipeRepositoryImpl
 import com.example.mymerce.domain.GreetingRepository
 import com.example.mymerce.domain.ProductRepository
+import com.example.mymerce.domain.RecipeRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,6 +36,12 @@ object AppModule {
     @Singleton
     fun provideProductRepository(api: ApiCall): ProductRepository {
         return ProductRepositoryImpl(api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideRecipeRepository(api: ApiCall): RecipeRepository {
+        return RecipeRepositoryImpl(api)
     }
 
     @Provides

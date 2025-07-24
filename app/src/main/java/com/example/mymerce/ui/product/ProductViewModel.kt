@@ -1,4 +1,4 @@
-package com.example.mymerce.ui.home
+package com.example.mymerce.ui.product
 
 import android.util.Log
 import androidx.compose.runtime.getValue
@@ -14,16 +14,26 @@ import com.example.mymerce.domain.ProductRepository
 
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class ProductViewModel @Inject constructor(
+    private val repository: ProductRepository
 ) : ViewModel() {
 
-    val profileImageUrl = "https://cdn.nba.com/headshots/nba/latest/1040x760/1629029.png"
+    private val _products = mutableStateOf<List<Product>>(emptyList())
+    val products: List<Product> get() = _products.value
+
     var isLoading by mutableStateOf(true)
         private set
 
     init {
         viewModelScope.launch {
-            isLoading = false
+            try {
+                _products.value = repository.getProducts()
+                Log.d("HomeViewModel", "Results: ${_products.value}")
+            } catch (e: Exception) {
+                Log.e("HomeViewModel", "Error: ${e.localizedMessage}")
+            } finally {
+                isLoading = false
+            }
         }
     }
 }

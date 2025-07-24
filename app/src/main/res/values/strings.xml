@@ -6,6 +6,8 @@
 
     <string name="home">Home</string>
     <string name="dashboard">Dashboard</string>
+    <string name="product">Product</string>
     <string name="notifications">Notifications</string>
+    <string name="recipe">Recipe</string>
 
 </resources>
